@@ -1,0 +1,27 @@
+extends layout
+block content
+    h1 #{device.name}
+    if device.data.length >0
+        h3 Data
+        table
+            thead
+                tr
+                    th Value
+                    th Timestamp
+
+            tbody
+                each value in device.data
+                    tr
+                        td #{value.value}
+                        td #{value.timestamp}
+    else
+        h4 No data registered yet :(
+        h4 Send some data with a POST request to /save-data/#{device.id}
+
+    if device.type == "ACTUATOR"
+        h3 Status: #{device.status}
+        form(style="width:10%" method="POST" action="/update-device-status")
+            label(for="status") New status
+            input(type="number" name="status")
+            input(style="display:none" value=`${device.id}`)
+            button(type="submit") Update status

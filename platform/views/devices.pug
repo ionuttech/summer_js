@@ -1,0 +1,21 @@
+extends layout
+block content
+    h1 Devices page
+    table
+        thead
+            tr
+                th ID
+                th Name
+                th Description
+                th Type
+                th Action
+
+        tbody
+            each device in devices
+                tr
+                    td #{device.id}
+                    td #{device.name}   
+                    td #{device.description}   
+                    td #{device.type}   
+                    td 
+                        a(href=`/device/${device.id}`) View device

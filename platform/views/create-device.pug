@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    form(method="POST" action="/create-device" style="margin:50px auto; width:30%")
+        h2 Create a new device
+        label(for="name") Device name
+        input(type="text" placeholder="Device name" name="name" required)
+        label(for="description") Device description (opcional)
+        input(type="text" placeholder="Device description" name="description")
+        h4 Device type
+        input(type="radio", name="type" value="SENSOR" required) 
+        label Sensor
+        br
+        input(type="radio", name="type" value="ACTUATOR" required) 
+        label Actuador
+        br
+        br
+        button(type="submit") Register

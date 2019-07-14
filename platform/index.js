@@ -14,6 +14,8 @@ mongoose.connection.on('error', function(error) {
 });
 
 require('./models/User');
+require('./models/Device');
+require('./models/Data');
 
 const routes = require('./routes/routes');
 

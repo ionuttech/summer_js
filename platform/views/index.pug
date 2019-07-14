@@ -1,3 +1,14 @@
 extends layout
 block content
-    h1 Main Page
+    div(style="margin: 50px auto; width:90%")
+        h2 Welcome to the TechCloud Platform
+        if !user
+            p 
+                a( att href="/register") Register 
+                |
+                | or
+                |
+                a( att href="/login")
+                    | Login
+                | 
+                | to get started

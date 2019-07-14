@@ -12,11 +12,11 @@ html
                 a(href="/")
                     h4 Summer iot 
             ul
-                li
-                    a(href="/") Home
                 if user
                         li
-                            a(href="/boards") My boards
+                            a(href="/create-device") Create a new device
+                        li
+                            a(href="/devices") My devices
                         li
                             a(href="/account") #{user.username}
                         li
@@ -27,5 +27,5 @@ html
                     li
                         a(href="/login") Login
                     
-        main
+        main(style="padding:30px 50px")
             block content
