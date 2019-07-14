@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    form(method="POST" action="/register" style="margin:50px auto; width:30%")
+        h2 Register an account
+        label(for="username") Username
+        input(type="text" placeholder="Username" name="username" required)
+        label(for="email") Email address
+        input(type="email" placeholder="Email address" name="email" required)
+        label(for="password") Password
+        input(type="password" placeholder="Password" name="password" required)
+        label(for="confirmPassword") Confirm password
+        input(type="password" placeholder="Password" name="confirmPassword" required)
+        button(type="submit") Register

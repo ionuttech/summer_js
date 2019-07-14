@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/bare.css')
+    link(rel='stylesheet', href=`/css/${styleFile}`)
+  body
+    block header
+        nav
+            header
+                a(href="/")
+                    h4 Summer iot 
+            ul
+                li
+                    a(href="/") Home
+                if user
+                        li
+                            a(href="/boards") My boards
+                        li
+                            a(href="/account") #{user.username}
+                        li
+                            a(href="/signout") Sign out
+                else
+                    li
+                        a(href="/register") Register
+                    li
+                        a(href="/login") Login
+                    
+        main
+            block content

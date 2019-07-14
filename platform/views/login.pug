@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    form(method="POST" action="/login" style="margin:50px auto; width:30%")
+        h2 Login
+        label(for="username") Username
+        input(type="text" placeholder="Username" name="username" required)
+        label(for="password") Password
+        input(type="password" placeholder="Password" name="password" required)
+        button(type="submit") Register
